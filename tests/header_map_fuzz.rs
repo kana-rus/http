@@ -87,8 +87,8 @@ impl Fuzz {
         }
 
         Fuzz {
-            seed: seed,
-            steps: steps,
+            seed,
+            steps,
             reduce: 0,
         }
     }
@@ -119,7 +119,7 @@ impl AltMap {
         let action = self.gen_action(weight, rng);
 
         Step {
-            action: action,
+            action,
             expect: self.clone(),
         }
     }
@@ -155,9 +155,9 @@ impl AltMap {
         let old = self.insert(name.clone(), val.clone());
 
         Action::Insert {
-            name: name,
-            val: val,
-            old: old,
+            name,
+            val,
+            old,
         }
     }
 
@@ -166,8 +166,8 @@ impl AltMap {
         let val = self.remove(&name);
 
         Action::Remove {
-            name: name,
-            val: val,
+            name,
+            val,
         }
     }
 
@@ -181,9 +181,9 @@ impl AltMap {
         vals.push(val.clone());
 
         Action::Append {
-            name: name,
-            val: val,
-            ret: ret,
+            name,
+            val,
+            ret,
         }
     }
 
